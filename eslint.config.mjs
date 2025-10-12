@@ -5,7 +5,7 @@ export default [
   {
     files: [ "**/*.js" ],
     languageOptions: {
-      sourceType: "commonjs",
+      sourceType: "module",
       ecmaVersion: "latest",
       globals: globals.browser,
     },
@@ -25,15 +25,11 @@ export default [
       "semi": [ "error", "never" ],
       "yoda": [ "error", "always" ],
       "space-before-blocks": [ "error", "always" ],
-      "space-in-parens": [ "error", "always" ],
+      "space-in-parens": [ "error", "never" ],
       "no-trailing-spaces": "error",
       "padded-blocks": [ "error", "never" ],
       "eqeqeq": "error",
-      "keyword-spacing": [ "error", { "before": true, "after": true, "overrides": { 
-        "if": { "after": false }, 
-        "for": { "after": false }, 
-        "while": { "after": false }, 
-        "static": { "after": false } } } ],
+      "keyword-spacing": [ "error", { "before": true, "after": true } ],
     },
   },
   pluginJs.configs.recommended,

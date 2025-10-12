@@ -1,7 +1,16 @@
 {
+  "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.11.1",
-    "eslint": "^8.57.1",
+    "eslint": "^9.37.0",
     "globals": "^15.9.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "scripts": {
+    "lint": "npx eslint .",
+    "fixlint": "npx eslint --fix .",
+    "dev": "node ./index.js"
   }
 }
