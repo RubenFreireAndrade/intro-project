@@ -1,5 +1,3 @@
-
-
 import { getdata, putdata } from "./api.js"
 import { showform, getformfieldvalue, setformfieldvalue, clearform, gettablebody, cleartablerows } from "./form.js"
 import { findancestorbytype } from "./dom.js"
@@ -8,7 +6,6 @@ document.addEventListener("DOMContentLoaded", async function() {
   document.getElementById("addperson").addEventListener("click", addpersoninput)
   await gopeople()
 })
-
 
 /**
  *
@@ -38,8 +35,6 @@ async function addperson(name, email, notes) {
 async function updateperson(id, name, email, notes) {
   await putdata("people", { id, name, email, notes })
 }
-
-
 
 /**
  * @returns { Promise }

@@ -1,5 +1,3 @@
-
-
 const rooturl = `${window.location.protocol}//${window.location.host}/api/`
 
 /**

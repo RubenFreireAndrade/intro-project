@@ -1,6 +1,5 @@
-
-
 let formsubmitcallback
+
 document.addEventListener("DOMContentLoaded", async function() {
   const closeelements = document.querySelectorAll(".close")
   closeelements.forEach(element => {
@@ -66,7 +65,6 @@ export function setformfieldvalue(formitemid, value) {
   // @ts-ignore (it does!)
   document.getElementById(formitemid).value = value
 }
-
 
 /**
  *
