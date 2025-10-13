@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "commonJS",
+    "module": "nodenext",
     "target": "es6",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "checkJs": true
   },
   "include": [ "index.js", "lib/*.js", "public/js/*.js", "test/interface/*.spec.js" ],
