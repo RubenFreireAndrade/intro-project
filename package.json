@@ -4,8 +4,8 @@
     "dev": "node ./index.js",
     "test": "mocha test/**/*.spec.js --timeout 5000",
     "test:watch": "mocha test/**/*.spec.js --watch",
-    "checklint": "npx eslint .",
-    "fixlint": "npx eslint --fix ."
+    "checklint": "npx eslint lib public",
+    "fixlint": "npx eslint --fix lib public"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

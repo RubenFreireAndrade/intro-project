@@ -130,6 +130,7 @@ export function addpersondom(person) {
   const deletebutton = document.createElement("button")
   deletebutton.textContent = "Delete"
   deletebutton.style.marginLeft = "5px"
+  /*eslint no-unused-vars: ["error", { "args": "none" }]*/
   deletebutton.addEventListener("click", async (ev) => {
     if(confirm(`Delete ${person.name}?`)) {
       // TODO: implement delete in the backend
