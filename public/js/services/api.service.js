@@ -1,15 +1,15 @@
 
 
-const rooturl = `${window.location.protocol}//${window.location.host}/api/`
+const rootUrl = `${window.location.protocol}//${window.location.host}/api/`
 
 /**
  * Wrapper for all API GET requests
  * @param { string } api
  * @returns { Promise< object > }
  */
-export async function getdata(api) {
+export async function getData(api) {
   try {
-    const url = rooturl + api
+    const url = rootUrl + api
 
     const response = await fetch(url)
 
@@ -30,7 +30,7 @@ export async function getdata(api) {
  * @param { object } data
  * @returns { Promise }
  */
-export async function putdata(api, data) {
+export async function putData(api, data) {
   const request = {
     method: "PUT",
     headers: {
@@ -39,7 +39,7 @@ export async function putdata(api, data) {
     body: JSON.stringify(data)
   }
 
-  const url = rooturl + api
+  const url = rootUrl + api
   await fetch(url, request)
 }
 

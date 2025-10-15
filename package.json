@@ -2,8 +2,8 @@
   "type": "module",
   "scripts": {
     "dev": "node ./index.js",
-    "seed": "node ./lib/seed.js",
-    "reset": "node ./lib/reset.js",
+    "seed": "node ./lib/database/seed.js",
+    "reset": "node ./lib/database/reset.js",
     "test": "NODE_ENV=test mocha test/**/*.spec.js --timeout 5000",
     "test:watch": "NODE_ENV=test mocha test/**/*.spec.js --watch",
     "checklint": "npx eslint lib public",

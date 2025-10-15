@@ -1,6 +1,6 @@
 import { expect } from "chai"
-import { get, add } from "../../lib/people.js"
-import { resetDatabase } from "../../lib/db.js"
+import { get, add } from "../../lib/services/people.service.js"
+import { resetDatabase } from "../../lib/database/connection.js"
 
 describe("People API Functions", function() {
   // Reset database before all tests to ensure clean state

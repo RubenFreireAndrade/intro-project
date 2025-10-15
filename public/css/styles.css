@@ -143,10 +143,19 @@ th {
 }
 
 /* Target only the <th> elements in the second row */
-tr:nth-of-type(2) th {
+tr.days th {
   background-color: #343a40; /* Slightly lighter but still high contrast */
-  font-size: 12px;
+  font-size: 11px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 8px;
+  white-space: nowrap;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Make sure day headers are visible */
+tr.days th:not(:first-child):not(:last-child) {
+  min-width: 90px;
 }
 
 /* Table body styling */
@@ -475,18 +484,73 @@ html {
   }
 }
 
+/* Schedule grid styling */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.schedule-day {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.day-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0066cc;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.building-select,
+.room-select {
+  padding: 8px;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* Wider form for schedule */
+form:has(.schedule-grid) {
+  width: 90%;
+  max-width: 1100px;
+}
+
+/* Table schedule cell styling */
+table td[style*="text-align: center"] {
+  font-weight: 500;
+  color: #0066cc;
+}
+
+table td[style*="text-align: center"]:empty::after {
+  content: "-";
+  color: #adb5bd;
+}
+
 /* Print styles */
 @media print {
   button {
     display: none;
   }
-  
+
   table {
     box-shadow: none;
     border: 1px solid #000;
   }
-  
+
   tbody tr:hover {
     background-color: transparent;
+  }
+
+  .schedule-grid {
+    grid-template-columns: repeat(7, 1fr);
   }
 }
