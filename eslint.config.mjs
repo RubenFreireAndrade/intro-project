@@ -29,11 +29,7 @@ export default [
       "no-trailing-spaces": "error",
       "padded-blocks": [ "error", "never" ],
       "eqeqeq": "error",
-      "keyword-spacing": [ "error", { "before": true, "after": true, "overrides": { 
-        "if": { "after": false }, 
-        "for": { "after": false }, 
-        "while": { "after": false }, 
-        "static": { "after": false } } } ],
+      "keyword-spacing": [ "error", { "before": true, "after": true } ],
     },
   },
   pluginJs.configs.recommended,
