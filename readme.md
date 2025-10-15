@@ -12,6 +12,12 @@ npm run dev
 
 Then point a browser to `http://localhost:3000`
 
+Make sure to run 
+```
+npm run seed
+```
+to populate the database.
+
 ### Available Commands
 
 ```bash
