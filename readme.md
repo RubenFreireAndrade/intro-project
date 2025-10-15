@@ -7,10 +7,22 @@
 This is a complete Node application. It can be run from the command line or within a Docker container:
 
 ```
-node ./index.js
+npm run dev
 ```
 
 Then point a browser to `http://localhost:3000`
+
+### Available Commands
+
+```bash
+npm run dev            # Start the development server
+npm run seed           # Seed database with default data
+npm run reset          # Drop all data and reseed with defaults
+npm test               # Run all tests
+npm run test:watch     # Run tests in watch mode
+npm run checklint      # Check for linting errors
+npm run fixlint        # Auto-fix linting errors
+```
 
 ## Fork
 

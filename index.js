@@ -5,9 +5,13 @@ import { readFile } from "fs"
 import { join, extname as _extname } from "path"
 
 import { handleapi } from "./lib/api.js"
+import { initializeDatabase } from "./lib/db.js"
 
 dotenv.config()
 const publicdirectory = join(import.meta.dirname, "public")
+
+// Initialize database
+await initializeDatabase()
 
 /**
  * Function to serve static files (HTML, CSS, JS)
@@ -77,5 +81,5 @@ const server = createServer(async (req, res) => {
 
 const port = process.env.PORT || 3000
 server.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
+  console.log(`Server is running on port http://localhost:${port}`)
 })

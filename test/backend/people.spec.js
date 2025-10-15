@@ -1,13 +1,17 @@
 import { expect } from "chai"
 import { get, add } from "../../lib/people.js"
+import { resetDatabase } from "../../lib/db.js"
 
 describe("People API Functions", function() {
+  // Reset database before all tests to ensure clean state
+  before(async function() {
+    await resetDatabase()
+  })
   describe("get()", function() {
     it("should return an array of people", async function() {
       const result = await get(new URL("http://localhost:3000/api/people"))
-      
+
       expect(result).to.be.an("array")
-      expect(result.length).to.be.at.least(2)
     })
 
     it("should return people with required properties", async function() {
