@@ -17,89 +17,281 @@
     <main>
       <h1>Welcome</h1>
 
-      <h2>People</h2>
-      <button id="addperson">Add Person</button>
-      <table id=" peopletable">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th colspan="7">Schedule</th>
-            <th>Action</th>
-          </tr>
-          <tr class="days">
-            <th></th>
-            <th class="day-1"></th>
-            <th class="day-2"></th>
-            <th class="day-3"></th>
-            <th class="day-4"></th>
-            <th class="day-5"></th>
-            <th class="day-6"></th>
-            <th class="day-7"></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </main>
+            <h2>People</h2>
+            <button id="addperson">Add Person</button>
+            <table id="peopletable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th colspan="7">Schedule</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr class="days">
+                        <th></th>
+                        <th class="day-1"></th>
+                        <th class="day-2"></th>
+                        <th class="day-3"></th>
+                        <th class="day-4"></th>
+                        <th class="day-5"></th>
+                        <th class="day-6"></th>
+                        <th class="day-7"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
 
-    <!--        <footer>
-            <p>&copy; 2024 babblevoice. All rights reserved.</p>
-        </footer> -->
-  </div>
+            <h2>Landlords</h2>
+            <button id="addlandlord">Add Landlord</button>
+            <table id="landlordstable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
 
-  <!-- Forms-->
-  <div id="personform" class="container" style="display: none;">
-    <form>
-      <h2>Person</h2>
-      <div class="form-group">
-        <label for="personform-name">Name</label>
-        <input type="text" id="personform-name">
-      </div>
-      <div class="form-group">
-        <label for="personform-email">Email</label>
-        <input type="email" id="personform-email">
-      </div>
-      <div class="form-group">
-        <label for="personform-notes">Notes</label>
-        <textarea id="personform-notes" rows="4"></textarea>
-      </div>
-      <button type="submit">Save</button>
-      <button class="close" type="button">Close</button>
-    </form>
-  </div>
+            <h2>Buildings</h2>
+            <button id="addbuilding">Add Building</button>
+            <table id="buildingstable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Landlord</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
 
+            <h2>Rooms</h2>
+            <button id="addroom">Add Room</button>
+            <table id="roomstable">
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>Building</th>
+                        <th>Floor</th>
+                        <th>Capacity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </main>
+    </div>
 
-  <div id="workflowform" class="container" style="display: none;">
-    <form>
-      <h2>Workflow</h2>
-      <div class="form-group">
-        <label for="workflowform-name">Name</label>
-        <input type="text" id="workflowform-name">
-      </div>
-      <div class="form-group">
-        <label for="workflowform-notes">Notes</label>
-        <textarea id="workflowform-notes" rows="4"></textarea>
-      </div>
-      <button type="submit">Save</button>
-      <button class="close" type="button">Close</button>
-    </form>
-  </div>
+    <!-- Person Form -->
+    <div id="personform" class="container" style="display: none;">
+        <form>
+            <h2>Person</h2>
+            <div class="form-group">
+              <label for="personform-name">Name</label>
+              <input type="text" id="personform-name" required>
+            </div>
+            <div class="form-group">
+              <label for="personform-email">Email</label>
+              <input type="email" id="personform-email">
+            </div>
+            <div class="form-group">
+              <label for="personform-notes">Notes</label>
+              <textarea id="personform-notes" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Weekly Schedule</label>
+              <div class="schedule-grid">
+                <div class="schedule-day">
+                  <label for="personform-day1-building" class="day-label">Day 1</label>
+                  <select id="personform-day1-building" class="building-select">
+                    <option value="">-- Building --</option>
+                  </select>
+                  <select id="personform-day1-room" class="room-select">
+                    <option value="">-- Room --</option>
+                  </select>
+                </div>
+                <div class="schedule-day">
+                  <label for="personform-day2-building" class="day-label">Day 2</label>
+                  <select id="personform-day2-building" class="building-select">
+                    <option value="">-- Building --</option>
+                  </select>
+                  <select id="personform-day2-room" class="room-select">
+                    <option value="">-- Room --</option>
+                  </select>
+                </div>
+                <div class="schedule-day">
+                  <label for="personform-day3-building" class="day-label">Day 3</label>
+                  <select id="personform-day3-building" class="building-select">
+                    <option value="">-- Building --</option>
+                  </select>
+                  <select id="personform-day3-room" class="room-select">
+                    <option value="">-- Room --</option>
+                  </select>
+                </div>
+                <div class="schedule-day">
+                  <label for="personform-day4-building" class="day-label">Day 4</label>
+                  <select id="personform-day4-building" class="building-select">
+                    <option value="">-- Building --</option>
+                  </select>
+                  <select id="personform-day4-room" class="room-select">
+                    <option value="">-- Room --</option>
+                  </select>
+                </div>
+                <div class="schedule-day">
+                  <label for="personform-day5-building" class="day-label">Day 5</label>
+                  <select id="personform-day5-building" class="building-select">
+                    <option value="">-- Building --</option>
+                  </select>
+                  <select id="personform-day5-room" class="room-select">
+                    <option value="">-- Room --</option>
+                  </select>
+                </div>
+                <div class="schedule-day">
+                  <label for="personform-day6-building" class="day-label">Day 6</label>
+                  <select id="personform-day6-building" class="building-select">
+                    <option value="">-- Building --</option>
+                  </select>
+                  <select id="personform-day6-room" class="room-select">
+                    <option value="">-- Room --</option>
+                  </select>
+                </div>
+                <div class="schedule-day">
+                  <label for="personform-day7-building" class="day-label">Day 7</label>
+                  <select id="personform-day7-building" class="building-select">
+                    <option value="">-- Building --</option>
+                  </select>
+                  <select id="personform-day7-room" class="room-select">
+                    <option value="">-- Room --</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button type="submit">Save</button>
+            <button class="close" type="button">Close</button>
+          </form>
+    </div>
 
+    <!-- Landlord Form -->
+    <div id="landlordform" class="container" style="display: none;">
+        <form>
+            <h2>Landlord</h2>
+            <div class="form-group">
+              <label for="landlordform-name">Name</label>
+              <input type="text" id="landlordform-name" required>
+            </div>
+            <div class="form-group">
+              <label for="landlordform-email">Email</label>
+              <input type="email" id="landlordform-email">
+            </div>
+            <div class="form-group">
+              <label for="landlordform-phone">Phone</label>
+              <input type="tel" id="landlordform-phone">
+            </div>
+            <div class="form-group">
+              <label for="landlordform-notes">Notes</label>
+              <textarea id="landlordform-notes" rows="4"></textarea>
+            </div>
+            <button type="submit">Save</button>
+            <button class="close" type="button">Close</button>
+          </form>
+    </div>
 
-  <div id="workflowstepsform" class="container" style="display: none;">
-    <form>
-      <h2>Workflow Steps</h2>
-      <div class="form-group">
-        <label for="workflowform-name">Name</label>
-        <input type="text" id="workflowform-name" readonly>
-      </div>
+    <!-- Building Form -->
+    <div id="buildingform" class="container" style="display: none;">
+        <form>
+            <h2>Building</h2>
+            <div class="form-group">
+              <label for="buildingform-name">Name</label>
+              <input type="text" id="buildingform-name" required>
+            </div>
+            <div class="form-group">
+              <label for="buildingform-address">Address</label>
+              <input type="text" id="buildingform-address">
+            </div>
+            <div class="form-group">
+              <label for="buildingform-landlord">Landlord</label>
+              <select id="buildingform-landlord">
+                <option value="">-- Select Landlord --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="buildingform-notes">Notes</label>
+              <textarea id="buildingform-notes" rows="4"></textarea>
+            </div>
+            <button type="submit">Save</button>
+            <button class="close" type="button">Close</button>
+          </form>
+    </div>
 
-      <div class="ganttchart">
-        <div class="gantttask" style="width: 30%; left: 0%; top: 0%;">Task 1</div>
-        <div class="gantttask" style="width: 40%; left: 30%; top: 20%;">Task 2</div>
-        <!-- Add more tasks as needed -->
-      </div>
+    <!-- Room Form -->
+    <div id="roomform" class="container" style="display: none;">
+        <form>
+            <h2>Room</h2>
+            <div class="form-group">
+              <label for="roomform-number">Room Number</label>
+              <input type="text" id="roomform-number" required>
+            </div>
+            <div class="form-group">
+              <label for="roomform-building">Building</label>
+              <select id="roomform-building" required>
+                <option value="">-- Select Building --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="roomform-floor">Floor</label>
+              <input type="number" id="roomform-floor">
+            </div>
+            <div class="form-group">
+              <label for="roomform-capacity">Capacity</label>
+              <input type="number" id="roomform-capacity">
+            </div>
+            <div class="form-group">
+              <label for="roomform-notes">Notes</label>
+              <textarea id="roomform-notes" rows="4"></textarea>
+            </div>
+            <button type="submit">Save</button>
+            <button class="close" type="button">Close</button>
+          </form>
+    </div>
+
+    <!-- Workflow Form (existing, keeping for compatibility) -->
+    <div id="workflowform" class="container" style="display: none;">
+        <form>
+            <h2>Workflow</h2>
+            <div class="form-group">
+              <label for="workflowform-name">Name</label>
+              <input type="text" id="workflowform-name">
+            </div>
+            <div class="form-group">
+              <label for="workflowform-notes">Notes</label>
+              <textarea id="workflowform-notes" rows="4"></textarea>
+            </div>
+            <button type="submit">Save</button>
+            <button class="close" type="button">Close</button>
+          </form>
+    </div>
+
+    <!-- Workflow Steps Form (existing, keeping for compatibility) -->
+    <div id="workflowstepsform" class="container" style="display: none;">
+        <form>
+            <h2>Workflow Steps</h2>
+            <div class="form-group">
+              <label for="workflowform-name">Name</label>
+              <input type="text" id="workflowform-name" readonly>
+            </div>
+
+            <div class="ganttchart">
+                <div class="gantttask" style="width: 30%; left: 0%; top: 0%;">Task 1</div>
+                <div class="gantttask" style="width: 40%; left: 30%; top: 20%;">Task 2</div>
+            </div>
 
       <button type="button">Add</button>
       <button class="close" type="button">Close</button>

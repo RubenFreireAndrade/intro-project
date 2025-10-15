@@ -1,16 +1,25 @@
 {
   "type": "module",
+  "scripts": {
+    "dev": "node ./index.js",
+    "seed": "node ./lib/database/seed.js",
+    "reset": "node ./lib/database/reset.js",
+    "test": "NODE_ENV=test mocha test/**/*.spec.js --timeout 5000",
+    "test:watch": "NODE_ENV=test mocha test/**/*.spec.js --watch",
+    "checklint": "npx eslint lib public",
+    "fixlint": "npx eslint --fix lib public"
+  },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
-    "eslint": "^9.37.0",
-    "globals": "^15.9.0"
+    "chai": "^6.2.0",
+    "chai-http": "^5.1.2",
+    "eslint": "^8.57.1",
+    "globals": "^15.9.0",
+    "jsdom": "^27.0.0",
+    "mocha": "^11.7.4"
   },
   "dependencies": {
-    "dotenv": "^17.2.3"
-  },
-  "scripts": {
-    "lint": "npx eslint .",
-    "fixlint": "npx eslint --fix .",
-    "dev": "node ./index.js"
+    "dotenv": "^17.2.3",
+    "sqlite3": "^5.1.7"
   }
 }

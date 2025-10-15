@@ -1,13 +1,17 @@
+
+
+
+
 /**
  *
  * @param { object } element
  * @param { string } className
  * @returns
  */
-export function findancestorbyclass(element, className) {
+export function findAncestorByClass(element, className) {
   let currentElement = element
 
-  while (currentElement && !currentElement.classList.contains(className)) {
+  while(currentElement && !currentElement.classList.contains(className)) {
     currentElement = currentElement.parentNode
   }
 
@@ -20,10 +24,10 @@ export function findancestorbyclass(element, className) {
  * @param { string } type
  * @returns { object }
  */
-export function findancestorbytype(element, type) {
+export function findAncestorByType(element, type) {
   let currentElement = element
-  const lowertype = type.toLowerCase()
-  while (currentElement && currentElement.tagName && currentElement.tagName.toLowerCase() !== lowertype) {
+  const lowerType = type.toLowerCase()
+  while(currentElement && currentElement.tagName && currentElement.tagName.toLowerCase() !== lowerType) {
     currentElement = currentElement.parentNode
   }
 
